@@ -1,0 +1,29 @@
+{
+  "name": "twister",
+  "version": "1.0.0",
+  "description": "twister game",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "twister",
+    "javascript",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Grigory Volchok",
+    "email": "grigoryvolchok@gmail.com",
+    "url": "https://grigoryvolchok.com"
+  },
+  "homepage": "https://twister.grigoryvolchok.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/V-Grigory/twister.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {}
+}
