@@ -1,4 +1,4 @@
-const t = require('./Twister');
+const t = require('./Twister')
 
 const start = (params) => {
     console.log('start')
@@ -7,20 +7,20 @@ const start = (params) => {
 
     let workingTwister = setInterval(() => {
 
-        twister.makeNextTwisterValue()
+        twister.makeTwisterValue()
 
-        while (twister.nextTwisterValueIsDouble()) {
-            console.log('== twisterValueIsDouble ==')
-            twister.makeNextTwisterValue()
+        while (twister.twisterValueIsDouble()) {
+            // console.log('== twisterValueIsDouble ==')
+            twister.makeTwisterValue()
         }
 
-        twister.setCurrentTwisterValue()
+        twister.saveMakedTwisterValue()
 
-        params.callback(twister.getCurrentTwisterValue())
+        params.callback(twister.getMakedTwisterValue())
 
-    }, params.interval);
+    }, params.interval)
 
-    setTimeout(() => clearInterval(workingTwister), params.duration);
+    return workingTwister
 }
 
 module.exports = { start }
