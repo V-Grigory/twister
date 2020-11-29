@@ -1,12 +1,12 @@
-const t = require('./Twister');
+const t = require('./index');
 
-describe('test saveMakedTwisterValue()', () => {
+describe('test saveTwisterValue()', () => {
 
     let twister = new t.Twister()
 
     test('test 1', () => {
         twister.twisterValue = { bodyPart: 'leftLeg', color: 'green' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: '',
             rightHand: '',
@@ -16,7 +16,7 @@ describe('test saveMakedTwisterValue()', () => {
     })
     test('test 2', () => {
         twister.twisterValue = { bodyPart: 'leftHand', color: 'red' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: 'red',
             rightHand: '',
@@ -26,7 +26,7 @@ describe('test saveMakedTwisterValue()', () => {
     })
     test('test 3', () => {
         twister.twisterValue = { bodyPart: 'rightHand', color: 'red' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: 'red',
             rightHand: 'red',
@@ -36,7 +36,7 @@ describe('test saveMakedTwisterValue()', () => {
     })
     test('test 4', () => {
         twister.twisterValue = { bodyPart: 'rightHand', color: 'blue' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: 'red',
             rightHand: 'blue',
@@ -46,7 +46,7 @@ describe('test saveMakedTwisterValue()', () => {
     })
     test('test 5', () => {
         twister.twisterValue = { bodyPart: 'leftLeg', color: 'red' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: 'red',
             rightHand: 'blue',
@@ -56,7 +56,7 @@ describe('test saveMakedTwisterValue()', () => {
     })
     test('test 6', () => {
         twister.twisterValue = { bodyPart: 'rightLeg', color: 'yellow' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: 'red',
             rightHand: 'blue',
@@ -66,7 +66,7 @@ describe('test saveMakedTwisterValue()', () => {
     })
     test('test 7', () => {
         twister.twisterValue = { bodyPart: 'leftHand', color: 'yellow' }
-        twister.saveMakedTwisterValue()
+        twister.saveTwisterValue()
         expect(twister.savedBodyPartsColor).toEqual({
             leftHand: 'yellow',
             rightHand: 'blue',

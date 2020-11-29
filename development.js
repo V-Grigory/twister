@@ -1,10 +1,11 @@
-const appTwister = require('../twister')
+const t = require('./index')
 
-let handlerWorkingTwister = appTwister.start({
+let appTwister = new t.Twister({
     interval: 1000,
     callback: twisterValue => handlerTwisterValue( twisterValue )
 })
-setTimeout(() => clearInterval(handlerWorkingTwister), 7000);
+appTwister.start()
+setTimeout(() => appTwister.stop(), 7000);
 
 const handlerTwisterValue = (v) => {
     console.log(v)
